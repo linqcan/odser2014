@@ -1,0 +1,54 @@
+{
+  "tableCaptions" :  { 
+    "bavota2013empirical-jEdit-logicalLow" : "jEdit logical low", 
+    "bavota2013empirical-jEdit-structuralLow" : "jEdit structural",
+    "bavota2013empirical-jEdit-semanticLow" : "jEdit semantic",
+    "shar2013mining-static-defect" : "static defect",
+    "wang2013improving-eclipse-recall" : "Eclipse recall",
+    "wang2013improving-eclipse-fmeasure" : "Eclipse F-measure",
+    "minku2013analysis-nasa93effort" : "NASA93 Effort",
+    "minku2013analysis-nasaeffort" : "NASA Effort",
+    "minku2013analysis-desharnaiseffort" : "Desharnais Effort",
+    "minku2013analysis-sdreffort" : "SDR Effort",
+    "minku2013analysis-coc81effort" : "Cocomo81 Effort",
+    "feigenspan2013background-s1ifdef" : "S1-ifdef",
+    "lee2013drag-extractclass-eclipse" : "Extract Class Eclipse",
+    "lee2013drag-extractmethod-eclipse" : "Extract Method Eclipse",
+    "lee2013drag-movemethod-dndr" : "Move Method DNDR",
+    "song2013impact-kitchenham-mlp-meanBest" : "MLP Kitchenham Best",
+    "song2013impact-kitchenham-mlp-meanDflt" : "MLP Kitchenham Default",
+    "song2013impact-kitchenham-mlp-meanWorst" : "MLP Kitchenham Worst",
+    "parnin2013adoption-new": "Projects started after generics was introduced",
+    "parnin2013adoption-old": "Projects started before generics was introduced"
+
+
+    },
+  "plotOutliersCaptions" : { 
+    "bavota2013empirical-jEdit-logicalLow" : "jEdit logical low", 
+    "bavota2013empirical-jEdit-structuralLow" : "jEdit structural",
+    "bavota2013empirical-jEdit-semanticLow" : "jEdit semantic",
+    "shar2013mining-static-defect" : "Static defect", 
+    "wang2013improving-eclipse-recall" : "Eclipse recall", 
+    "wang2013improving-eclipse-fmeasure" : "Eclipse F-measure",
+    "minku2013analysis-nasa93effort" : "NASA93 Effort: person months",
+    "minku2013analysis-nasaeffort" : "NASA Effort: person months",
+    "minku2013analysis-desharnaiseffort" : "Desharnais Effort: hours",
+    "minku2013analysis-sdreffort" : "SDR Effort: person months",
+    "minku2013analysis-coc81effort" : "Cocomo81 Effort: person months",
+    "feigenspan2013background-s1ifdef" : "S1-ifdef",
+    "feigenspan2013background-m1ifdef" : "M1-ifdef",
+    "feigenspan2013background-m1ifdef-performance" : "M1-ifdef performance",
+    "feigenspan2013background-m2ifdef" : "M2-ifdef",
+    "feigenspan2013background-m2ifdef-performance" : "M2-ifdef performance",
+    "feigenspan2013background-m3ifdef-performance" : "M3-ifdef performance",
+    "lee2013drag-extractclass-eclipse" : "Extract Class Eclipse",
+    "lee2013drag-extractmethod-eclipse" : "Extract Method Eclipse",
+    "lee2013drag-movemethod-dndr" : "Move Method DNDR",
+    "song2013impact-kitchenham-mlp-meanBest" : "MLP Kitchenham Best",
+    "song2013impact-kitchenham-mlp-meanDflt" : "MLP Kitchenham Default",
+    "song2013impact-kitchenham-mlp-meanWorst" : "MLP Kitchenham Worst",
+    "parnin2013adoption-new": "Projects started after generics was introduced",
+    "parnin2013adoption-old": "Projects started before generics was introduced"
+
+    }
+}

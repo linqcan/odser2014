@@ -1,0 +1,15 @@
+\begin{table}
+  \caption{Algorithms reviewed in this study.}
+  \label{tab:algorithms}
+  \begin{tabu}{XX[2]XX[2]XX[2]X[2]X[2.5]}
+    \hline
+    \textbf{Name}             & \textbf{Dimensions} & \textbf{Type}                      & \textbf{Unsupervised}\strut & \textbf{Robust} & \textbf{Parameterless}\strut & \textbf{Reference}                       & \textbf{Comment}                                     \\ \hline
+    Modified Z Score\strut & One        & Median Absolute Deviation & Yes          & Yes    & Yes           & \citet{garcia2012tests}       & See Section~\ref{sec:resultsprestudy-algorithms}  \\ \hline
+    ABOD             & Multi      & Angle based               & Yes          & Yes    & Yes           & \citet{kriegel2008angle}      & See Section~\ref{sec:resultsprestudy-algorithms}  \\ \hline
+    LOCI             & Multi      & Density based             & Yes          & Yes    & No            & \citet{papadimitriou2003loci} & See Section~\ref{sec:resultsprestudy-algorithms}  \\ \hline
+    LOF              & Multi      & Density based             & Yes          & No     & No            & \citet{breunig2000lof}        & Difficult to calculate parameter needed\strut     \\ \hline
+    PCOut            & Multi      & Median Absolute Deviation & Yes          & Yes    & No            & \citet{filzmoser2008outlier}  & Difficult to estimate the parameters needed\strut \\ \hline
+    FastABOD         & Multi      & Angle based               & Yes          & Yes    & No            & \citet{kriegel2008angle}      & $k$ nearest neighbor                          \\ \hline
+    ORCA             & Multi      & Distance based            & Yes          & Yes    & No            & \citet{bay2003mining}         & $k$ nearest neighbor                          \\ \hline
+  \end{tabu}
+\end{table}

@@ -1,0 +1,42 @@
+% Define block and lines
+
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{block} = [rectangle, draw,
+text width=5em, text badly centered, rounded corners, minimum height=4em]
+
+
+
+\begin{tikzpicture}[node distance = 3cm, auto, every node/.style={scale=0.8}]
+    \node [block] (csv1) {Original data set {\small (CSV)}};
+    \node [block, below of=csv1] (elki) {\textsf{ELKI}};
+    \node [block, right of=elki] (r_mzs) {MZS in \textsf{R}};
+    \node [block, below of=elki] (csv2) {Result {\small (CSV)}};
+    \node [block, left of=csv2] (csv4) {Result {\small (CSV)}};
+    \node [block, below of=csv2] (parser1) {Parser};
+    \node [block, left of=parser1] (parser2) {Parser};
+    \node [block, below of=parser1] (r_labelling){R, Labelling};
+    \node [block, below of=r_labelling] (csv3) {Labelled result {\small (CSV)}};
+    \node [block, right of=csv3] (csv5) {Labelled result {\small (CSV)}};
+    \node [block, left of=csv3] (csv6) {Result {\small (CSV)}};
+    \node [block, below of=csv3] (r_analysis) {Analysis in \textsf{R}};
+
+    %LOCI path
+    \path [line] (csv1) -- node [anchor=east] {ABOD, LOCI} (elki);
+    \path [line] (elki) -- node {LOCI} (csv2);
+    \path [line] (csv2) -- (parser1);
+    \path [line] (parser1) -- (r_labelling);
+    \path [line] (r_labelling) -- (csv3);
+    \path [line] (csv3) -- (r_analysis);
+    %\path [line] (h1) -- node  {rejected} (h2);
+    %ABOD path
+    \path [line] (elki) -- node [anchor=east] {ABOD} (csv4);
+    \path [line] (csv4) -- (parser2);
+    \path [line] (parser2) -- (csv6);
+    \path [line] (csv6) -- (r_analysis);
+    %MZS Path
+    \path [line] (csv1) --node {Modified Z Score (MZS)} (r_mzs);
+    \path [line] (r_mzs) -- (csv5);
+    \path [line] (csv5) -- (r_analysis);
+
+
+\end{tikzpicture}

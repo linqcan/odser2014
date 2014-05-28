@@ -1,0 +1,21 @@
+% Define block styles
+\tikzstyle{decision} = [diamond, draw,
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse, node distance=3cm,
+    minimum height=2em]
+
+\begin{tikzpicture}[node distance = 4cm, auto]
+    \node [cloud] (outliers) {Outliers};
+    \node [cloud, right of=outliers] (replication) {Replication};
+    \node [decision, below of=outliers] (h1) {$H_{0_{\mathrm{Outliers}}}$};
+    \node [decision, below right of=h1] (h2) {$H_{0_{\mathrm{Concl}}}$};
+    \node [cloud, below of=replication] (rq1){RQ1};
+    \node [cloud, right of=rq1] (rq2) {RQ2};
+    \path [line] (outliers) -- (h1);
+    \path [line] (outliers) -- (rq1);
+    \path [line] (replication) -- (rq1);
+    \path [line] (replication) -- (rq2);
+    \path [line] (h1) -- node  {Rejected} (h2);
+
+\end{tikzpicture}

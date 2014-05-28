@@ -1,0 +1,192 @@
+﻿\section{Results from Pre-Study}
+\label{sec:resultsprestudy}
+The goal of the pre-study is to provide papers and algorithms that could be used for the application of algorithms in Section~\ref{sec:results}.
+
+
+
+
+In this section descriptive statistics regarding the paper search will be presented before the results from the same search is presented. Furthermore, results from the algorithm search will be presented in the proceeding section.
+
+
+
+
+\subsection{Descriptive Statistics for the Paper Search}
+\label{sec:resultsprestudy-descriptive}
+In Table~\ref{tab:resultsprestudy-descstat} descriptive statistics for the paper search is presented. From this table one can note that 39\% of the papers had data available after a request was sent to the authors. Furthermore, it is stated in the table that two replies were given as `other reasons', these reasons were that the data's size was too large for it to be handed over and that the data was not easily available to the author. Additionally, two papers were disregarded due to their unsuitability to outlier detection. This unsuitability is further elaborated in Section~\ref{sec:discussion-method}. The descriptive statistics will be used to answer \textbf{RQ1} and \textbf{RQ2}. A discussion regarding the data in Table~\ref{tab:resultsprestudy-descstat} is presented in Section~\ref{sec:discussion-resultsprestudy}.
+
+
+\input{descstatpapertable.tex}
+
+
+\subsection{Candidates from the Paper Search}
+In this section, the papers that were chosen based on the criteria described in Section \ref{sec:method-paper} are presented. That is, papers whose data was available and whose pre-process was deemed possible to replicate were selected as candidates. All papers reviewed in the paper search are presented in Appendix~\ref{sec:appendix-allpapers} with their corresponding assessment. Information regarding the sample sizes for all data sets part of this study can be found in Appendix~\ref{sec:appendix-samplesizes}.
+
+
+%bavota2013empirical
+\subsubsection{An empirical study on the developers' perception of software coupling}
+The study by \citet{bavota2013empirical} looks into how coupling is perceived by developers by letting two groups of developers study coupling in three software systems. Developers assessed the level of coupling using a 1--5 Likert scale. In total there are 48 data sets available divided over two groups of developers, three applications and eight coupling measures. For the purpose of this study the data sets for one application (jEdit) and one group (external developers) was investigated which sums up to eight data sets. The jEdit data is described as confirming the findings of JHotDraw and ArgoUML by \citet{bavota2013empirical} and therefore jEdit was chosen. The group ``original developers'' was disregarded in this study with the same motivation as in the original study, the sample size is too low. The data from this study was made available online by the authors.
+
+
+
+
+%itkonen2013test
+\subsubsection{Are test cases needed? Replicated comparison between exploratory and test-case-based software testing} 
+\citet{itkonen2013test} replicates a previous study that compared two manual testing techniques, Exploratory Testing (ET) and Test-Case-based Testing (TCT). This new study compares the two testing techniques using 51 students, who conducted testing on the jEdit text editor. The results from this new study reports that there were no significant difference in effectiveness when detecting defects between ET and TCT\@. This result is inline with the original study. For the purpose of this study all four data sets in the paper were chosen. The data sets were related to the defect count and testing effort for both of the evaluated techniques. Furthermore, \citet{itkonen2013test} conducts outlier detection with the help of box-plots. The outliers identified, subjects that are performing exceptionally well or poorly, are still included in their statistical analysis. The data for this study was available online via a reference in the paper.
+
+
+
+
+%shar2013mining
+\subsubsection{Mining SQL injection and cross site scripting vulnerabilities using hybrid program analysis}
+\citet{shar2013mining} are studying how SQL injections and Cross Site Scripting (XSS) can be predicted from code analysis. Two different classifiers, Logistic Regression (LR) and multi-layer perceptron, were tested on 10 projects and three attributes were assessed (probability of defect, probability of false alarm and precision). For the purpose of this study outlier detection data from the LR results (all three attributes individually) including both analysis methods presented in the paper (hybrid and static) was chosen. These data sets were selected since they are used when conclusions are drawn in the original paper. In total 6 data sets with 10 data points in each was chosen. The data was available in the paper.
+
+
+
+
+%arcuri2013parameter
+\subsubsection{Parameter tuning or default values? An empirical investigation in search-based software engineering}
+\citet{arcuri2013parameter} investigates how parameter tuning impacts search results by conducting more than one million experiments. The authors claims that tuning parameters has an impact, but are not able to find settings that significantly outperforms the default search parameters. Three data sets containing information about the time budget used for the search were chosen for this study. The three different data sets have the same parameters except for population size which is set to 4, 10 and 50 for the different runs.  These data sets were chosen because the authors claims that the population size could be set as a linear function of the search budget. The data from this paper was made available online via a reference in the paper.
+
+
+
+
+%minku2013analysis
+\subsubsection{An analysis of multi-objective evolutionary algorithms for training ensemble models based on different performance measures in software effort estimation} 
+\citet{minku2013analysis} analyzes how Multi-objective Evolutionary Algorithms can be used for software effort estimation. This is achieved with the help of data sets from PROMISE and ISBSG\@. For this study five data sets claimed to be from the PROMISE repository were chosen. However, only two out of these five data sets were available in the PROMISE repository as of today. The other three data sets were made available by the author after an email request. The data sets from ISBSG were not available for free and were therefore disregarded in this study. Furthermore, \citet{minku2013analysis} conducts outlier detection on the data using $k$-means clustering and this is described in an extended version of the paper. The outliers were not included in the statistical analysis. Part of the data was available online via PROMISE and part of it after an email request. 
+
+
+
+
+%wang2013improving
+\subsubsection{Improving feature location practice with multi-faceted interactive exploration}
+In their paper \citet{wang2013improving} present a tool for locating features in a system's code base. They compare their tool with Eclipse using two groups with ten participants in each. For this study the results presented in Table 2-3 in their paper was used. Furthermore, each attribute per group was considered as a variable. Performing the analysis on these sets are of interest since they are used in the significance testing carried out by the authors. In total six data sets were chosen. The data was available in the paper.
+
+
+
+
+%nam2013transfer
+\subsubsection{Transfer defect learning}
+\citet{nam2013transfer} are studying cross project defect prediction and propose an extension to Transfer Component Analysis (TCA) called Transfer Component Analysis Plus (TCA+). The authors compare TCA and TCA+ by using two already existing defect benchmarking data sets, ReLink and AEEEM\@.  From the comparison the authors conclude that TCA+ significantly improves cross project prediction performance. For this study the $F$-measures were chosen since it is the measure used to compare TCA with TCA+.  More specifically, the ReLink and AEEEM data sets for both TCA and TCA+ techniques were chosen. This summed up to 4 data sets in total. The data sets were made available in the paper.
+
+
+
+
+%feigenspan2013background
+\subsubsection{Do background colors improve program comprehension in the \#ifdef hell?}
+\citet{feigenspan2013background} performed three controlled experiments to validate if background colors improve program comprehension in preprocessor-based implementations. All data sets visualized in Figure 4 in the original paper \citep{feigenspan2013background} was chosen as well as the data used to answer their Research Hypothesis 4. In total twenty-four data sets were assessed. The data was made available by the author after a request was sent.
+
+
+
+
+%sawadsky2013reverb
+\subsubsection{Reverb: Recommending code-related web pages}
+\citet{sawadsky2013reverb} explores how to provide useful web page recommendations to developers. The recommendations is a subset of pages already visited by the developer. The authors introduce a tool called Reverb that recommends previously visited web pages that relate to the code visible in the developers editor. The authors also conduct a field study on nine participants and find that Reverb on average can recommend a useful web page in 51\% of the revisitation cases. For this study two data sets that describe the hit rates of Reverb, initial hit rate and optimized hit rate, was chosen. The two data sets were available in the paper.
+
+
+
+
+%lee2013drag
+\subsubsection{Drag-and-drop refactoring: Intuitive and efficient program transformation}
+\label{sec:resultsprestudy-lee2013drag}
+\citet{lee2013drag} introduces a new approach to refactoring through a drag-and-drop tool called Drag-and-Drop Refactoring. An empirical study is conducted to validate the usefulness of the introduced tool. For this study the data collected regarding the configuration time was selected as it is used to draw conclusions about the efficiency of the new tool. More specifically, the data collections called the ``Extract Method'', ``Move Method'', ``Collated Refactorings'' and ``Extract Class'', which all contains two data sets each named ``Eclipse'' and ``DNDR'', were chosen. However, ``Extract Class DNDR'' was excluded since it is missing data. In total, four data sets are. The data was gathered from Table 4 in the original paper.
+
+
+
+
+%song2013impact
+\subsubsection{The impact of parameter tuning on software effort estimation using learning machines}
+\label{sec:resultsprestudy-song2013impact}
+In their paper, \citet{song2013impact} investigates to what extent parameters affect performance of learning machines within SE estimation. Furthermore, they are also studying learning machines' sensitivity to parameter settings. Five learning machines were tested on three data sets and the parameters were varied to study the result. For the purpose of this study the data sets regarding performance for ``MLPs'' on the ``Kitchenham'' data set was chosen as the performance of ``MLPs'' was of particular interest of the original authors. Descriptive statistics for these three sets are presented in Table 3a in the original paper. The data was sent by the author upon request.
+
+
+
+
+%parnin2013adoption 
+\subsubsection{Adoption and use of Java generics}
+\citet{parnin2013adoption} conducted an empirical investigation on how Java generics had been integrated into open source projects. They investigated this by comparing 40 open source projects and how they implement Java generics. Out of these projects, 20 of the investigated projects were started before Java generics was introduced (established projects) and 20 of the projects were started after Java generics was introduced (recent projects). This setup, with having established projects and recent projects was chosen to compare the difference in number of days between when Java generics and Java annotations was introduced. In this study two datasets were chosen. The data sets regarded the difference in days between introducing generics and annotations, for recent and established projects. This data relates to RQ3 in their study. From the dataset representing the established projects three data points were missing values and they were removed as they were removed in the original paper. The removal was carried out in order to replicate the original study to the highest possible extent. There were replication tools available online from the authors but for the intermediate data needed in this study the authors needed to be contacted.
+
+
+
+
+%herbold2013training
+\subsubsection{Training data selection for cross-project defect prediction}
+In their study \citet{herbold2013training} proposes distance-based strategies for the selection of training data used for defect prediction. Several predictor models are studied, however, only one of them (Support Vector Machine, SVM) is used for the analysis regarding the success rate, mean recall and mean precision. Furthermore, they conclude that one strategy for this model performs better than the others, neighborhood size 25 (NN-25). Therefore, for the purpose of this study the model SVM for strategy NN-25 was chosen. This summed up to three data sets in total. The data was provided by the authors after a request was sent.
+
+
+
+
+\subsection{Candidate algorithms from the algorithm search}
+\label{sec:resultsprestudy-algorithms}
+Based on the criteria stated in Section~\ref{sec:method-algorithms} the following three algorithms were deemed suitable: Modified Z Score (MZS) \citep{garcia2012tests}, LOcal Correlation Integral (LOCI) \citep{papadimitriou2003loci} and Angle Based Outlier Detection (ABOD) \citep{kriegel2008angle}. MZS is an algorithm for one-dimensional data, i.e.\ data concerning only one attribute. The other two algorithms, LOCI and ABOD, have been created with the purpose of detecting outliers in multi-dimensional data. Multi-dimensional data is defined in this study as data that concerns two or more attributes\slash dimensions.
+
+
+
+
+The excluded algorithms and their accompanying motivation can be found in Appendix~\ref{sec:appendix-allalgorithms}.
+
+
+
+
+\subsubsection{Modified Z Score (MZS)} 
+The Modified Z Score algorithm measures how much a particular data point differs from the rest of the data set, using a score calculated by Equations~\ref{eq:mzs1} and \ref{eq:mzs2}. Modified Z Score is applicable for one dimensional data and calculates the score, $M_{i}$,  from the Median Absolute Deviation (MAD). Therefore, the algorithm is more robust than algorithms using the mean to score outliers \citep{garcia2012tests}. In the exceptional case where MAD equals zero the same alternative algorithm as used by \citet{ibm2007spss} is implemented. Furthermore, to label outliers both algorithms uses the $M_{i}$ score and compares it to the average $M_{i}$ score of the data set. \citet{iglewicz1993detect} suggests that if $M_{i}$ is $> 3.5\sigma$ it should be considered as an outlier and using this cutoff value will make the method more robust. Since MZS is a robust algorithm, does not take any input parameters and does not require training data it is deemed to conform to the criteria for choosing algorithms in this study.
+
+
+\begin{equation}\label{eq:mzs1}
+\mathrm{MAD} = \mathrm{median}_{i} (| X_{i} - \mathrm{median}_{j} (X_{j})| )
+\end{equation}
+
+
+\begin{equation}\label{eq:mzs2}
+M_{i} = \frac{ 0.6745(| X_{i} - \mathrm{median}_{j} (X_{j})| )}{\mathrm{MAD}}
+\end{equation}
+
+
+
+
+\subsubsection{Local COrrelation Integral (LOCI) }
+Local correlation integral method is an unsupervised and density based outlier detection algorithm. It is based on the idea of a Multi-granularity DEviation Factor (MDEF) and provides an ``automatic'' method for detecting outliers. MDEF can be explained as a technique that describes how much a data point $p$'s neighborhood density, on a distance $\alpha r$ from $p$, deviates from its neighborhoods' average density. The neighborhoods chosen for comparison are the neighborhoods within $r$ from $p$. A point in a very populated neighborhood will have a MDEF of $0$ and points that could be suspected outliers will have a MDEF closer to $1$ \citep{papadimitriou2003loci}.
+
+
+
+
+The LOCI algorithm is described as not being sensitive to the choice of parameters and the authors also suggests how to set the required parameters in \citep{papadimitriou2003loci}. In this study a value of 20 was used for the parameter $nmin$, number of neighbors, as proposed by the authors. However, this choice requires the data set to be evaluated to consist of at least 20 data points. To determine if a data point should be considered as an outlier, or an inlier, a cutoff value is required. In this study the cutoff value is set to $3\sigma$, again, as recommended by the authors. Furthermore, $\alpha$, the scaling factor for the neighborhood, is set to 0.5 in this study, also as recommended by the authors. Finally, the parameter $r_{max}$ can be calculated by using the definition in original paper. Therefore, LOCI does not fulfill the criterion regarding being parameterless. However, the authors propose default values for the required parameters that would make the algorithm robust. For that reason LOCI was chosen despite it not being truly parameterless. 
+
+
+By setting the required parameters to the proposed values, and calculating one according to the original paper, LOCI can be considered parameterless and robust. This, combined with LOCI being unsupervised, the algorithm does fulfill the selection criteria.
+
+
+
+
+\subsubsection{Angle Based Outlier Detection (ABOD)}
+ABOD is an unsupervised algorithm that takes on a different approach than LOCI\@. Instead of using a distance measure ABOD is focusing on the angle between two distance vectors for two points seen from a point $p$ under inspection. After the angles for each two pairs of distance vectors have been computed the total variance is calculated for the angles. This total variance is then called the Angle Based Outlier Factor (ABOF) which also represents the score for point $p$. The output from ABOD is a list of all points sorted by their score. The lower the score, the more likely it is that the point is an outlier. ABOD does not, however, tell you which points are outliers, it only tells you the level of `outlierness' of each point. Deciding which point that is an outlier needs to be done by the user. An important feature of ABOD is that is does not require any input parameter, except the data, to operate. Finally, in the beginning of this section it is mentioned that distances are not used for ABOD, this however is not completely true. The distance is used but only as a weighting factor to ensure that the angle for points far away from $P$ is contributing less to the variance \citep{kriegel2008angle}.
+
+
+Due to the large amount of pairs that need to be analyzed, ABOD has a time-complexity of $O(n^{3})$ which results in long computation times. To solve this \citet{kriegel2008angle} propose an approximation of ABOD called FastABOD\@. This version uses $k$ nearest neighbors and computes the angle value only for pairs among these $k$ neighbors. The result of this is an algorithm not as computationally intensive. However, this algorithm was disregarded in this study since it is dependent on an input parameter, i.e.\ $k$ nearest neighbors, which is non-trivial to determine for an arbitrary data set. Furthermore, \citet{kriegel2008angle} states that ``the quality of the approximation depends on the number $k$ of nearest neighbors'' which further indicates that this algorithm is not suitable for this study.
+
+
+The ABOD algorithm is parameterless in its definition \citep{kriegel2008angle}, however, the implementation requires a kernel function to be supplied which is used for similarity checks. The default polynomial kernel function with a degree of $2$ was chosen for this purpose.
+
+
+ABOD fulfills the criteria by being unsupervised, not making any assumptions about the distribution and by not requiring any input parameters.
+
+
+\subsubsection{Changes to the Automated Process}
+As a result of the found algorithms the planned automated process was changed and those changes are defined further in this section.
+Modified Z Score was implemented in \textsf{R}\footnote{\url{http://www.r-project.org/}} and is available in this study's repository\footnote{\url{https://github.com/linqcan/odser2014}}. The LOCI and ABOD algorithms used were supplied by the ELKI Data Mining Framework\footnote{\url{http://elki.dbs.ifi.lmu.de}}\citep{elki2013} and this software was also used to run the algorithms. \textsf{Python} was used to connect the different tools with each other as well as for data parsing.
+
+
+For a one-dimensional data set the MZS algorithm is run in \textsf{R}. The result is stored in a comma separated value (CSV) file. This CSV file contains the original data set and a boolean flag for each point stating if it is an outlier or not. 
+
+
+A data set which contains more than one dimension is evaluated with both LOCI and ABOD using ELKI\@. Before LOCI is run the parameter $r_{max}$, required by ELKI, is calculated and passed on to ELKI\@. The results from the outlier detection in ELKI are written to a CSV file. This file is then parsed in \textsf{Python} to remove strings inserted by ELKI\@. For LOCI this result file contains the original data points and the $MDEF_{\sigma}$ value for each point. Similarly, the ABOD contains the original data points and the ABOD outlier score. The CSV file for LOCI is then fed to a \textsf{R} script that takes the original data set and labels data points as outliers with a boolean flag if their respective $MDEF_{\sigma}$ value is above a specified cutoff value, $3\sigma$. The result of this labelling is then stored in a CSV file. No further processing is to be done on the ABOD results.
+
+
+The CSV files with the results from the outlier detection algorithms is then used in the analysis phase.
+
+
+The automated process is visualized in Appendix~\ref{sec:appendix-pipeline}.
+
+
+\subsubsection{Changes to the Analysis}
+\label{sec:resultsprestudy-changestotheanalysis}
+As ABOD does not explicitly tell which points are outliers, an addition to the analysis presented in Section \ref{sec:method-appalgo-analysis} is needed. The results from applying ABOD on a data set is compared with that of LOCI to see if the $n$ detected outliers by LOCI are the $top\ n$ reported by ABOD\@. The motivation behind this is to see if the result from an angle-based method differs much from a distance-based. Furthermore, for multi-dimensional data, no intermediate significance testing is carried out. Instead, only the conclusion, after the removal of the reported outliers from LOCI, is validated.

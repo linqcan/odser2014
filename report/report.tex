@@ -1,0 +1,89 @@
+\documentclass[a4paper]{article}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{longtable}
+\usepackage[round]{natbib}
+\usepackage{pdflscape}
+\usepackage[font=scriptsize]{subcaption}
+\usepackage{tabu}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+% Put captions for figures under the figure
+\restylefloat{figure}
+
+\title{Unsupervised Outlier Detection in Software Engineering}
+\author{Henrik Larsson \and Erik Lindqvist}
+\date{2014}
+
+\begin{document}
+
+%% Titlepage
+\maketitle
+\thispagestyle{empty}
+
+%% Empty page
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+%% Abstract
+\clearpage
+\thispagestyle{empty}
+\input{abstract}
+
+%% Empty page
+\newpage
+\thispagestyle{empty}
+\mbox{}
+
+%% TOC
+\newpage
+\pagenumbering{roman}
+\setcounter{page}{1}
+\tableofcontents
+
+
+%%
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\include{introduction}
+
+%%
+\include{relatedwork}
+
+%%
+\include{method}
+
+%%
+\include{resultsprestudy}
+
+%%
+\include{results}
+
+
+%%
+\include{discussion}
+
+%%
+\include{threatstovalidity}
+
+%%
+\include{conclusions}
+
+%%
+\include{futurework}
+
+%%
+\include{appendix}
+
+%% References
+\newpage
+\bibliographystyle{unsrtnat}
+\bibliography{references.bib}
+
+\end{document}

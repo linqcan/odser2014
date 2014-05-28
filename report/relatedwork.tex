@@ -1,0 +1,62 @@
+﻿\section{Related Work and Theoretical Background}
+\label{sec:relatedwork}
+In this section two areas of importance for this study, outliers and replication will be presented. In Section~\ref{sec:related-outliers} outliers will be defined, look at issues regarding outliers and finally present related work regarding this area. Section~\ref{sec:related-replication} aims at presenting replication as a concept and its importance as well as some related work regarding replication within SE\@.
+
+
+
+
+\subsection{Outliers}
+\label{sec:related-outliers}
+Outliers are data points that differ significantly from other data points in a data set. A commonly used definition for outliers is ``an outlying observation, or outlier, is one that appears to deviate markedly from other members of the sample in which it occurs'' \citep{osborne2004power}. It is also stated by \citet{osborne2004power} that the effect of outliers can impair the statistical analysis. Therefore, determining if the collected data contains any data values that should be regarded as outliers is of importance. 
+
+
+
+
+There are several approaches for classifying outlier detection methods, three of them are mentioned by \citet{hodge2004survey} as unsupervised, supervised and semi-supervised detection techniques. Unsupervised detection determines if a data point is an outlier with no prior knowledge of the data set and flags the data points most separated from the normal data as outliers. Supervised detection use data that is pre-labeled as normal or not normal in order to determine if the other data points are outliers or not. Finally, semi-supervised detection requires a set of training data to detect outliers \citep{hodge2004survey}.  
+
+
+
+
+\citet{rousseeuw1990unmasking} state that in data sets with more than two dimensions it can be difficult to detect outliers because visual inspection is not as reliable. Therefore, it is important to use other methods than visual inspection to detect outliers in multi-dimensional data. However, some outlier detection techniques require information about the distribution of the data set. Determining this distribution for data sets with more than two dimensions can be challenging. Hence, if one is not certain of the distribution, choosing a method for outlier detection that does not make assumptions about the distribution is prefered (whether having a large, multidimensional data set, or not).
+
+
+
+
+\citet{seo2013value} studied the effect of outliers in software effort estimation. This was done by investigating the effect outliers have on the estimation accuracy of commonly used software estimation methods. The methods are evaluated on industrial data collected from publicly available repositories such as PROMISE and ISBSG\@. A Wilcoxon ranked sum test was used to see if removing outliers made a significant difference. \citet{seo2013value} reported that there was a positive effect in estimation accuracy when removing outliers but not enough to say that it is significantly better. The study by \citet{seo2013value} differs from this study by being focused on effort estimation and using publicly available data sets only. Furthermore, this study relies on data retrieved from recently published papers within SE and takes a more automated approach to outlier detection. The focus in this study is on describing the state of practice when it comes to data availability and how research data is made available (\textbf{RQ2}).
+
+
+
+
+\citet{yuan2001effect} evaluates how outliers distorts the results in covariance structure analysis and the quantitative effect of outliers on statistical tests. Covariance tests are used to determine how different variables are affected of each other. Since covariance tests are used within SE, see e.g.\ \citet{card1987evaluating}, it may be of importance for the SE community to understand what impact outliers have on the end result. \citet{yuan2001effect} reports that effects of a few outliers can discredit the value of using a model. They also report that outliers does not need to be very extreme to break down the covariance analysis.
+
+
+
+
+\subsection{Replication}
+\label{sec:related-replication}
+As empirical studies have become more common within SE the importance of being able to replicate studies increases. Such replications are important since they help increase the body of knowledge around SE, which in turn leads to an increased maturity of the field. A replication of a study also comes with benefits for the original study in terms of increased confidence for the conducted experiment and the reported findings (e.g.\ tightened confidence intervals). Furthermore, the success of a conducted replication is not mainly depending on how well the replicated result conforms to the original but on the contribution to the body of knowledge \citep{basili1999building, shull2008role, brooks2008replication}.
+
+
+
+
+There are in general two forms of replication, internal and external. Internal replication is carried out by the original researcher or team while external replication is carried out by someone else than the original author \citep{brooks2008replication}. Furthermore, the degree to which a replication is carried out can be divided into exact and conceptual replication. An exact replication is a replication which follows the original procedure as closely as possible, whereas a conceptual replication is a replication where the same hypothesis is validated through a different procedure \citep{shull2008role}. However, \citet{juristo2011role} states that exact replication within SE is close to non-existent due to the difficulties in recreating the exact conditions from the original experiment. Furthermore, \citet{juristo2011role} also propose that promoting non-exact experiments could encourage more researchers to perform replication experiments.
+
+
+
+
+\citet{sjoberg2005survey} found in their survey that only 18\% of the surveyed papers from SE were replications. This was a surprising finding considering that replication is seen as important in science \citep{lindsay1993design}. The reason for this lack of replication studies is interesting and \citet{lindsay1993design} propose that it might be due to that replicated experiments do not reward the researcher as much as an original experiment.
+
+
+
+
+The previously referenced papers regarding replication within SE are focusing mostly around replicating the experiment and do not regard data analysis to a great extent. Though, within the field of bioinformatics, where large data sets are common, more work has been carried out in order to promote a more reproducible way of presenting the analysis for a study \citet{tan2010advancing, gentleman2004reproducible, preeyanon2014reproducible}. The main purpose of these proposals is to make the analysis clear to the reader and reproducing a study's report is merely executing an accompanying script in the report's repository. This allows the reader to easily reproduce artifacts such as plots and tables, and the reader can even perform changes to the analysis and study the result of them \emph{in vivo}. If it is assumed that the amount of data used by empirical studies within SE is increasing, the need for standardized tools for handling data, such as those promoted for bioinformatics, increases as well.
+
+
+
+
+Although it might sound simple in theory to ensure that a study is reproducible, the previously mentioned low outcome of replications could be an indicator that it is harder in practice.
+
+
+
+
+In this study `reproducibility' will be referred to as the ability to replicate a study's `result' based on the information stated in the original study. The `result' can refer to intermediate results as well as the final result of a study. In this study the focus is on reproducibility of the analysis, known as ``re-analysis'' \citep{gomez2010replication} i.e.\ verifying the results of the analysis based on data from the original study.

@@ -1,0 +1,31 @@
+ #!/bin/bash          
+ # Check that Python V 2.7.X is installed
+case "$(python -V 2>&1)" in *" 2.7"*)
+        echo [Init Pipeline] Python verision: Ok
+        ;;
+    *)
+        echo [Init Pipeline] Wrong python version needs to be Python 2.7.X
+        ;;
+esac
+
+
+
+
+#Checks that R is installed and version is newer that 2.14
+RVersion=$(R --version | grep  "R version" | awk '{ print $3 }')
+IFS='.' read -ra ADDR <<< "$RVersion"
+if [[ ${ADDR[0]} -gt 2 ]] || [[ ${ADDR[0]} -eq 2 && ${ADDR[1]} -gt 14 ]]; then
+    echo [Init Pipeline] R version: OK
+    Rscript scripts/initR.R
+else
+    echo [Init Pipeline] Needs R version 2.15 or newer
+fi
+
+# Check for latex and latex packages
+which pdflatex > /dev/null
+pdflatexValue=$?
+if [ $pdflatexValue -eq 0 ]; then
+    bash scripts/initLatex.sh
+else 
+    echo [Init Pipeline] pdflatex is missing
+fi

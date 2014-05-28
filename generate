@@ -1,0 +1,135 @@
+#!/bin/bash
+
+print_status_msg() {
+  echo -e "[generate] "$1;
+}
+
+print_msg() {
+  echo -e $1
+}
+
+run_analysis() {
+  print_status_msg "Running analysis on data sets"
+  cd scripts
+  ./pipeline.py ../data_sets
+  ./createHtmlDocs.py
+  cd ..
+}
+
+clean_results() {
+  print_status_msg "Cleaning results"
+  cd scripts
+  ./pipeline.py clean
+  cd ..
+}
+
+compile_report() {
+  print_status_msg "Generating report"
+  cd report
+  pdflatex report
+  bibtex report
+  pdflatex report
+  pdflatex report
+  pdflatex report
+  cd ..
+}
+
+clean_report() {
+  print_status_msg "Cleaning report folder"
+  cd report
+  rm *.aux
+  rm *.log
+  rm report.out
+  rm report.bbl
+  rm report.blg
+  rm report.toc
+  rm report.pdf
+  cd ..
+}
+
+create_misc_latex() {
+  print_status_msg "Running the createLatex script for subfigures etc"
+  cd scripts
+  ./createLatex.py
+  cd ..
+}
+
+view_report() {
+  if ! [[ "$1" == "yes" ]]; then
+    print_msg "Would you like to display the report (y/n)?"
+    read dispans
+    case "$dispans" in
+      y|yes);;
+      *)
+        exit 0
+        ;;
+    esac
+  fi
+
+  if ! [ -e report/report.pdf ]; then
+    print_msg "The report does not exist, compile it first!"
+    exit 1
+  fi
+
+  print_status_msg "Displaying report"
+
+  # Choose pdf viewer depending on OS
+  osname=`uname`
+  if [[ "$osname" == "Linux" ]]; then
+    evince report/report.pdf&
+  elif [[ "$osname" == "Darwin" ]]; then
+    open report/report.pdf
+  fi
+}
+
+print_help() {
+  print_msg "Script to generate analysis results and compile the report"
+  print_msg ""
+  print_msg "Usage:"
+  print_msg "generate option"
+  print_msg ""
+  print_msg "Options:"
+  print_msg "all\t\t Runs analysis and compiles the report."
+  print_msg "report\t\t Compiles the report only."
+  print_msg "analysis\t Runs the analysis only."
+  print_msg "viewreport\t Displays the report using a PDF viewer."
+  print_msg "clean\t\t Removes the folder 'results' containing all anaylsis results as well as cleaning the 'report' folder from all files created by Latex."
+  print_msg ""
+}
+
+# Handle the script's options
+case "$1" in
+  all)
+    run_analysis
+    create_misc_latex
+    compile_report
+    print_status_msg "Done"
+    view_report
+    ;;
+  report)
+    # Can only generate report if results exists
+    if [ ! -d results/ ]; then
+      print_status_msg "Results are missing! Run analysis before compiling report!"
+      exit
+    fi
+    create_misc_latex
+    compile_report
+    print_status_msg "Done"
+    view_report
+    ;;
+  analysis)
+    run_analysis
+    print_status_msg "Done"
+    ;;
+  viewreport)
+    view_report yes
+    ;;
+  clean)
+    clean_results
+    clean_report
+    print_status_msg "Done"
+    ;;
+  --help|*)
+    print_help
+    ;;
+esac

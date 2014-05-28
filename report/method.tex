@@ -1,0 +1,154 @@
+﻿\section{Methodology}
+\label{sec:methodology}
+By using a method for conducting a study the steps taken can be communicated more clearly. Furthermore, by using known methods for a study the credibility of it increases since it will be easier for the reviewer to understand the steps conducted. Using known methods also has the benefit of not needing to define each step but only motivate why this method is suitable. Lastly, by using a method for a study, compared to doing it \emph{ad hoc}, it is more likely that the study is reproducible since, as stated before, the understandability is likely to be higher.
+
+
+There are multiple methods to choose from when conducting research within SE. Two common ways of conducting research are experiments and case studies. Experiments can be conducted both within a controlled environment such as a laboratory setting or a real life setting. Common for both settings are that some of the variables can be controlled and changed in order to observe effects and compare outcomes of the experiment \citep{wohlin2012experimentation}. Case studies are well suited for investigating a single entity or comparing two different methods for conducting a task within a certain context. They are also suitable for industrial evaluation of SE methods. However, case studies have the disadvantage of being difficult to generalize as a representative for the population \citep{runeson2009guidelines}. This study can be seen as a case study in a broader context. In this case the context is SE and the phenomenon under investigation is outlier detection.
+
+
+
+
+The method used in this study consisted of a \emph{pre-study}, the \emph{application of algorithms} and a \emph{replication of the analysis} for selected papers.
+
+
+
+
+\subsection{Pre-Study}
+The pre-study consisted of two different parts, the search for papers and the search for algorithms. The result from both of these tasks were then used for the application of algorithms where the algorithms were applied on the papers in order to be able to answer the hypotheses. A description of how the search was conducted for papers is presented in Section~\ref{sec:method-paper} and for the search for algorithms in Section~\ref{sec:method-algorithms}.
+
+
+
+
+\subsubsection{Search Process for Papers}
+\label{sec:method-paper}
+
+
+
+
+The process of searching and reviewing papers was carried out in a systematic way albeit not strictly following the guidelines for conducting systematic literature reviews in SE. Selection and quality assessment criteria were defined and used to determine which papers to include for the study. The process was meant to provide a sample of published papers to give an idea of the current state of the research field. Therefore, an exhaustive review over all papers published within the field was not carried out. Due to this limitation, this review cannot be considered a ``systematic literature review'' as defined in \citep{kitchenham2007guidelines}. The methodology used for the review is further elaborated in the following paragraphs.
+
+
+% Inclusion and exclusion criteria
+Papers used in this study were selected from the research field SE. To refine the scoop only papers from recognizable sources within SE were considered. More specifically the sources were the \emph{Empirical Software Engineering Journal (ESEJ)}, \emph{International Conference on Software Engineering (ICSE)} and \emph{International Conference on Predictive Models in Software Engineering (PROMISE)}. ESEJ was chosen since it is a journal featuring articles on empirical research within SE. Proceedings from ICSE was chosen since the conference is considered to be among the leading conferences within SE. The PROMISE conference proceedings include empirical research and associated to this is an online repository\footnote{\url{https://code.google.com/p/promisedata/}} containing paper data. Therefore, PROMISE was deemed as suitable source for elicitation. Furthermore, only papers from 2013--2014 were considered, in order to get a current sample of the field, i.e.\ an exhaustive search was not conducted. As a final filter only papers regarding empirical studies and numerical data were chosen. The papers that passed the mentioned criteria were then considered for this study.
+
+
+
+
+% Quality assessment
+After the previously mentioned initial filtering a selection based on quality attributes was carried out. A selection process containing two steps was created to assess data availability and data post-processing reproducibility. 
+
+
+
+
+In the first step a paper's data availability was assessed. If the paper's data was published in the paper, or accessible online, or provided directly by the authors it passed the first step. The purpose of this step was to filter out papers where the raw data set is not accessible. 
+
+
+
+
+In the second step the possibility of being able to replicate exactly any processing done on the raw data set was assessed. If a paper's post-processing was deemed reproducible, or if none was conducted, the paper was kept and outlier detection algorithms were applied on its data set. Being able to reproduce the post-processing is important if further analysis of the paper's data set is to be possible. The filtering process is visualized in Figure~\ref{fig:method-allsteps}.
+
+
+\begin{figure}
+\centering
+\caption{The figure describes how the paper filtering process was implemented. The filtering done in ``Data available and post-process reproducible'' refers to the \emph{pre-study} while the filtering carried out in ``Has outliers and analysis is reproducible'' refers to the \emph{replication of analysis}.}
+\label{fig:method-allsteps}
+\input{figures/figallsteps.tex}
+\end{figure}
+
+
+
+
+The data needed to answer \textbf{RQ1} (``To what extent are outliers mentioned and outlier detection conducted in software engineering studies?'') was gathered simultaneously as the paper search was conducted. To answer the research question it was investigated to what extent outliers are mentioned and outlier detection is conducted in the studies selected in the previous filtering and selection.
+
+
+
+
+To answer \textbf{RQ2} (``To what extent is data available in research papers and in which form is the data made available?'') it was investigated how the data used in the reviewed papers are made available to the public. This was carried out by trying to access the raw data from the papers selected previously. As the first step, a check was made to see if the data was available in the paper. If no data was found in the paper a search was made for references to webpages or online repositories in the paper to see if the data was made available online. The third, and last, step was contacting the lead author via email and asking for the data. If a reply did not come within four weeks the data was regarded as not being available. 
+
+
+
+
+All papers assessed during the pre-study can be found in Appendix~\ref{sec:appendix-allpapers} together with the assessment of the different attributes.
+
+
+\subsubsection{Search Process for Algorithms}
+\label{sec:method-algorithms}
+
+
+
+
+The search for suitable candidate algorithms was carried out with the aim of finding algorithms that can be used in an automated environment. That is, algorithms that can be used in, for example, a script that takes a data set as input. In order to conduct this search three criteria were defined that an algorithm must fulfill in order to be considered for this study:
+
+
+\begin{itemize}
+\item The algorithm has to be unsupervised. The reason for this being that unsupervised algorithms requires no training data and with this requirement the effort and information needed to use the algorithm should be lower, compared to a supervised algorithm. 
+
+
+
+
+\item The algorithm does not make any assumptions about the distribution of the data set, also known as being robust. This criterion was important due to the difficulties of determining the distribution using an automated approach, and due to the fact that SE research many times contain data sets of various (small) sizes leading to the conclusion that a non-parametric approach is more applicable, generally speaking.
+
+
+
+
+\item The algorithm must not require any input parameters, except for the data set destined to analyze, as algorithms not requiring parameters have the benefit of being suitable for use in an automated environment.
+\end{itemize}
+
+
+\subsection{Application of Algorithms}
+\label{sec:method-appalgo}
+The goal of this step was to run the candidate algorithms on the data sets from the pre-study. In order to achieve this an automated process was created, referred to as the pipeline. This pipeline takes a data set as input and applies a suitable outlier detection algorithm on the set depending on if the data set is one-dimensional or multi-dimensional. 
+
+
+
+
+For each one-dimensional data set that was processed, the following information was produced:
+\begin{itemize}
+        \item The original data set with the identified outliers labelled.
+        \item Descriptive statistics for original and modified data sets:
+        \begin{itemize}
+                \item Mean
+                \item Median
+                \item Standard deviation
+                \item Number of outliers
+        \end{itemize}
+        \item Density and QQ-plots\footnote{QQ-plots are probability plots that compare two distributions. In this case, the studied data set's distribution is compared with that of a normal distribution.} for the original data set and the modified data set.
+        \item Plot with outliers marked and the change of mean if they are removed.
+        \item Output of a Shapiro-Wilks normality test for both the original and modified data set.
+        \item Output of a Welch's $t$-test. Significance testing for difference between the original and modified data set.
+        \item Output of a Mann-Whitney $U$ test. Significance testing for difference between the original and modified data set.
+\end{itemize}
+
+
+
+
+In order to make this study reproducible all results are automatically generated and can be recreated at any time by downloading the study's resources\footnote{\url{https://github.com/linqcan/odser2014}} and executing the analysis script as described in the accompanying documentation. This script then inputs all data sets into the pipeline and the results can then be viewed in the result folder. Software requirements for using the pipeline can be found in Appendix~\ref{sec:appendix-pipelinereqs}.
+
+
+
+
+\subsubsection{Analyzing the Results}
+\label{sec:method-appalgo-analysis}
+The analysis of the results consisted of two parts. In the first part, the presence of outliers was determined in order to see if $\mathbf{H_{0_{\mathrm{Outliers}}}}$ could be rejected. While in the second part it was investigated if the original data set without outliers differed significantly from the original data set. This comparison was conducted in order to get a general overview of the impact of outlier removal on the data set.
+
+
+
+
+The criterion for rejecting  $\mathbf{H_{0_{\mathrm{Outliers}}}}$ was that at least one outlier was found in any data set investigated after the application of algorithms was performed. If $\mathbf{H_{0_{\mathrm{Outliers}}}}$ could be rejected $\mathbf{H_{0_{\mathrm{Concl}}}}$ was investigated.
+
+
+
+
+In order to pick a suitable significance test for one-dimensional data a normality test of both the original and modified data set was carried out. For this purpose the Shapiro-Wilk test was chosen as it has been shown capable of performing normality tests \citep{razali2011power}. To complement the Shapiro-Wilk test, QQ-plots and density plots were used to allow visual inspection of the distribution. If any of the two data sets were reported as having a non-normal distribution a non-parametric significance test, Mann-Whitney $U$, was used. Contrary, if both data sets were normally distributed a parametric significance test, Welch's $t$-test, was used to decide if they were significantly different. If nothing else is mentioned, a significance level of 95\% was used for all significance testing.
+
+
+
+
+The output from using a multi-dimensional algorithm was unknown beforehand. Therefore, the design of the analysis for multi-dimensional algorithms was postponed until the pre-study was conducted. The result from the pre-study and the changes to the analysis can be found in Section~\ref{sec:resultsprestudy-algorithms} and Section~\ref{sec:resultsprestudy-changestotheanalysis}.
+
+
+
+
+\subsection{Replication of Analysis}
+\label{sec:method-repanalysis}
+In order to determine if $\mathbf{H_{0_{\mathrm{Concl}}}}$ can be rejected the original analysis of the data set was investigated for its reproducibility. If the data set had outliers and the analysis was deemed reproducible further analysis was conducted. This analysis was a replication of the original analysis but with the outliers removed from the data set. $\mathbf{H_{0_{\mathrm{Concl}}}}$ was rejected if at least one case existed where the conclusion in the original study did not hold when the modified data set was used.

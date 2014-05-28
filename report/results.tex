@@ -1,0 +1,84 @@
+﻿\section{Results}
+\label{sec:results}
+This section presents the results from applying outlier detection and removal on the papers selected in the pre-study as well as a deeper analysis of a few selected papers.
+
+
+\subsection{Application of Outlier Detection Algorithms}
+\label{sec:results-application}
+The results from applying outlier detection algorithms and removing outliers are presented in Table~\ref{tab:results} and data sets containing outliers are presented by the plots in Figure~\ref{fig:outliers-1}, Figure~\ref{fig:outliers-2} and Figure~\ref{fig:outliers-3}.
+
+
+
+
+\input{resulttable.tex}
+\input{../results/outlier-plot-matrix.tex}
+
+
+\subsection{Analysis of Selected Papers}
+\label{sec:results-papers}
+This section describes a more in depth analyze of the papers from Section~\ref{sec:results-application} that contained outliers. The purpose of this analysis is to determine if the removal of outliers affect the result of analysis in the original paper. Hence, the original analysis is reproduced on a modified data set that does not contain outliers. The sample sizes of the modified data sets are presented in Appendix~\ref{sec:appendix-samplesizes-modified} and the \textsf{R} code for the analysis conducted in Appendix~\ref{sec:appendix-codeforanalysis}.
+
+
+
+
+%feigenspan2013background
+\subsubsection{Do background colors improve program comprehension in the \#ifdef hell?}
+In this analysis the focus is on on research hypotheses RH1, RH2 and RH4 from \citep{feigenspan2013background} since they are all regarding non-binary data and their data was made accessible by the authors.
+
+
+
+
+For RH1 and RH2 post-processing was carried out on all the data sets regarding the maintenance tasks (M$x$) as the authors had omitted response times for questions that were answered incorrectly. This omission was mentioned in the original paper and clarified by the authors via email correspondence.
+
+
+
+
+The authors answer RH1 (``In static tasks, colors speed up program comprehension compared to ifdef directives'') and RH2 (``In maintenance tasks, there are no differences in response time between colors and ifdef directives'') by conducting a significance test and an effect size test for the static and maintenance tasks to compare the test using colors with the test using ifdef. To reproduce these tests a Mann-Whitney $U$ test was used for non-parametric and Welch's $t$-test for parametric significance testing. Only the data sets with possible outliers, S1-ifdef, M1-ifdef and M2-ifdef was considered for the reproduction. The new significance tests carried out in this study, Mann-Whitney $U$ for S1 and M2 and Welch's $t$-test for M1, showed no different conclusion than those carried out by the original authors. The effect size test, calculated using Cliff's delta, for S1 was slightly altered ($-0.6417$ compared to $-0.61$) but it resulted in no different conclusions as well.
+
+
+
+
+RH4 was validated using significance tests in the original study. The data sets used in RH4 consisted of results from a survey using a 1--5 Lickert scale. After outlier detection was conducted on the data sets used for this research question, three data sets were reported to have potential outliers: M1-ifdef performance, M2-ifdef performance and M3-ifdef performance. Since these were the only modified data sets, significance tests were only reproduced for these three data sets. The reproduction of the statistical analysis, using a Mann-Whitney $U$ test, showed no other results than those reported in the original study.
+
+
+%wang2013improving 
+\subsubsection{Improving feature location practice with multi-faceted interactive exploration}
+The study by \citet{wang2013improving} fits the criterions stated in the method as a suitable candidate for outlier detection as well as for further analysis. However, in the analysis, a paired $t$-test is used to determine if there is a significant difference in performance between using Eclipse and Multi-Faceted Interactive Explorer (MFIE). Therefore, further analysis is not possible and this will be elaborated in Section~\ref{sec:discussion-resultsapplication}.
+
+
+
+
+%lee2013drag
+\subsubsection{Drag-and-drop refactoring: Intuitive and efficient program transformation}
+Although this study matched the specified criteria for further analysis such analysis was not possible for \citep{lee2013drag}. The reason for this being that the statistical analysis (significance test) conducted in the paper was conducted as pairwise analysis. Further elaboration regarding this can be found in Section~\ref{sec:discussion-resultsapplication}.
+
+
+
+
+%shar2013mining
+\subsubsection{Mining SQL injection and cross site scripting vulnerabilities using hybrid program analysis}
+Reproducing the analysis of this study, with outliers removed, was not possible, even though it matched the specified criteria, since the study uses a pair-wise statistical test. The motivation behind this decision is discussed in Section~\ref{sec:discussion-resultsapplication}.
+
+
+
+
+%song2013impact
+\subsubsection{The impact of parameter tuning on software effort estimation using learning machines}
+In their research question RQ1 \citet{song2013impact} draw conclusions about the methods studied independently from each other. However, the analysis, of determining which parameter setting that is better for each approach on each set, uses a pair-wise comparison (``Wilcoxon sign-rank test with Holm-Bonferroni corrections''). Further analysis of the impact of outlier removal on this study is therefore not possible and the reason for this is discussed in Section~\ref{sec:discussion-resultsapplication}.
+
+
+
+
+%bavota2013empirical
+\subsubsection{An empirical study on the developers' perception of software coupling}
+The results from the experiment are reported using a 1--5 Lickert scale and were not processed before being analyzed. In the original analysis the different coupling techniques' $p$-values are compared with each other. The $p$-values are calculated with a Mann-Whitney $U$ test, this test is then used to determine if there is a perceived difference between the different coupling techniques. Out of the eight investigated data sets from jEdit only three of them contained outliers: Semantic-low, structural-low and logical-low. After removing all outliers from the three data sets the same Mann-Whitney $U$ tests as used in the original study was executed. This lead to six tests and in one of those tests the $p$-values changed noticeable, in the comparison between structural low and logical low. However, this change does not affect the overall conclusion of the original study. 
+
+
+%parnin2013adoption
+\subsubsection{Adoption and use of Java generics}
+The study by \citet{parnin2013adoption} matched the specified criteria for being a suitable candidate on all except one criterion. This criterion, the analysis, was deemed as not being reproducible. The authors of \citet{parnin2013adoption} base their conclusions both on statistical significance tests such as $t$-tests and reasoning which makes it difficult to evaluate how the the investigated research question is affected by removing outliers. Therefore, this study will be excluded for further analysis.
+
+
+%minku2013analysis
+\subsubsection{An analysis of multi-objective evolutionary algorithms for training ensemble models based on different performance measures in software effort estimation}
+\citet{minku2013analysis} is suitable as a candidate for further analysis on the basis that is an empirical study which clearly describes how empirical data, suitable for outlier detection, was collected and processed. However, it was excluded from further analysis in this study since part of the data needed for evaluating the conclusions is not available for free and can not be re-published. Including \citet{minku2013analysis} would therefore hinder this report from being reproducible.

@@ -1,0 +1,28 @@
+{
+  "yaxis" : {
+    "bavota2013empirical-jEdit-logicalLow" : "Level of coupling",
+    "bavota2013empirical-jEdit-structuralLow" : "Level of coupling",
+    "bavota2013empirical-jEdit-semanticLow" : "Level of coupling",
+    "feigenspan2013background-m1ifdef" : "Response time in seconds",
+    "feigenspan2013background-m1ifdef-performance" : "Response time in minutes",
+    "feigenspan2013background-m2ifdef" : "Response time in seconds",
+    "feigenspan2013background-m2ifdef-performance" : "Response time in minutes",
+    "feigenspan2013background-m3ifdef-performance" : "Response time in minutes",
+    "feigenspan2013background-s1ifdef" : "Response time in seconds",
+    "lee2013drag-extractclass-eclipse" : "Configuration time in seconds",
+    "lee2013drag-movemethod-dndr" : "Configuration time in seconds",
+    "minku2013analysis-coc81effort" : "Effort applied in person-months ",
+    "minku2013analysis-nasaeffort" : "Effort applied in person-months ",
+    "minku2013analysis-nasa93effort" : "Effort applied in person-months ",
+    "minku2013analysis-desharnaiseffort" : "Effort applied in hours",
+    "minku2013analysis-sdreffort" : "Effort applied in person-months ",
+    "parnin2013adoption-old" : "Days between introduction of Java generics and Java annotations",
+    "parnin2013adoption-new" : "Days between introduction of Java generics and Java annotations",
+    "shar2013mining-static-defect" : "Probability of detection",
+    "song2013impact-kitchenham-mlp-meanBest" : "''Performance''",
+    "song2013impact-kitchenham-mlp-meanDflt" : "''Performance''",
+    "song2013impact-kitchenham-mlp-meanWorst" : "''Performance''",
+    "wang2013improving-eclipse-fmeasure" : "F-measure",
+    "wang2013improving-eclipse-recall" : "Recall"
+  }
+}

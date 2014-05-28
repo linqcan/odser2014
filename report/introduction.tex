@@ -1,0 +1,76 @@
+﻿\section{Introduction}
+\label{sec:introduction}
+
+
+
+
+Software is increasingly important for both national and international infrastructure. Hence, it is increasingly important to produce software more cost-efficiently \citep{sommerville2006software}. This has led to an increased interest, the last 30 years, in Software Engineering (SE). The field of SE not just covers the technical aspects of creating software, it also attends the aspects of managing software projects. Empirical studies plays an important role in order to study the effects of developed methods and tools within SE. These empirical studies are considered to be an accepted discipline within SE \citep{ko2013practical}. 
+
+
+Data collected from empirical studies are used to draw conclusions regarding the study. However, this data can contain outliers, values that deviates significantly from the rest, which may or may not impact the analysis of the study. It is therefore important to understand the impact of outliers in order to interpret the results correctly and to draw valid conclusions \citep{kriegel2008angle}. Additionally, the task of identifying and removing outliers needs to be documented for the study to be more easily replicated. This is of importance since replication experiments, which confirms the findings of a study, helps building confidence in the result and procedures. Therefore, replication is considered as one of the cornerstones in a scientific community and an indicator of how mature a scientific discipline is \citep{brooks2008replication}.
+
+
+In this study the presence of outliers will be investigated, within the field of Empirical Software Engineering (ESE)\@. Furthermore, the effect on the conclusions drawn in ESE studies, when potential outliers are removed, will be investigated to determine the applicability of outlier detection within ESE\@. Additionally, the extent to which outliers are mentioned and outlier detection is conducted will also be investigated. Ultimately, this study aims at providing guidelines regarding if\slash how outlier detection should be conducted and presented in empirical studies.
+
+
+This report is divided as follows: Section~\ref{sec:relatedwork} presents background information regarding outliers and replication as well as related work within these areas. In Section~\ref{sec:methodology} the methodology used for the pre-study is presented. Section~\ref{sec:resultsprestudy} presents the candidate papers and algorithms from the pre-study and is followed by Section~\ref{sec:results} where the results from the application of algorithms (presence of outliers) as well as a deeper analysis of a few selected papers is presented. The report is concluded with a discussion in Section~\ref{sec:discussion}, threats to validity in Section~\ref{sec:threatstovalidity} and finally conclusions in Section~\ref{sec:conclusions}.
+
+
+
+
+\subsection{Problem and Purpose}
+\label{sec:introduction-problem}
+As empirical studies within SE grows more complex, with the maturity of the field, the quantities of data that is handled grow as well. In order to be able to replicate these studies with large data sets it is of importance that all steps are well documented, including the data post-processing such as outlier detection. Furthermore, performing data post-processing, such as outlier detection, manually on a large data set can be a tedious and error-prone task, which may complicate replication of the study. Therefore, unsupervised and `automatic' methods are of interest.
+
+
+
+
+The purpose of this study is to investigate to what extent outlier detection is conducted and documented within the field of SE. Furthermore, outlier detection using unsupervised and `automatic' methods will be conducted on data sets from a selected collection of papers in order to investigate the presence of outliers. Additionally, a verification will be carried out, on a subset of papers containing outliers, in order to verify that their conclusions hold in the absence of outliers. Finally, guidelines will be proposed for how to present the data analysis performed in regards to outlier detection and removal. These guidelines are meant to support researchers in presenting their studies within SE so that the studies can be more easily replicated.
+
+
+
+
+\subsection{Hypotheses and Research Questions}
+Outliers can cause a large impact on the mean value of a data set. Hence, our first hypothesis is related to the occurrence of outliers within ESE studies.
+
+
+\begin{quote}
+$\mathbf{H_{0_{\mathrm{Outliers}}}}$ Data from software engineering studies do not contain outliers.
+\\$\mathbf{H_{1_{\mathrm{Outliers}}}}$ Data from software engineering studies contain outliers.
+\end{quote}
+
+
+If  $\mathbf{H_{0_{\mathrm{Outliers}}}}$ can be rejected it is of interest to investigate if removing the outliers could lead to different conclusions than those drawn in the original study. 
+
+
+\begin{quote}
+$\mathbf{H_{0_{\mathrm{Concl}}}}$ Removing outliers from software engineering studies does not lead to different conclusions than the conclusions drawn in the original study. 
+\\$\mathbf{H_{1_{\mathrm{Concl}}}}$  Removing outliers from software engineering studies leads to different conclusions than the conclusions drawn in the original study.
+\end{quote}
+
+
+The mentioning of outliers and conducting outlier detection in SE studies are of importance for the study's ability to be replicated. If data points are excluded for the sake of being outliers it is especially important to explain why, so others can reproduce this data post-processing step.
+
+
+\begin{quote}
+\textbf{RQ1:} To what extent are outliers mentioned and outlier detection conducted in software engineering studies?
+\end{quote}
+
+
+Having access to the original data of a study is of great help when replicating the study. Therefore, Research Question 2 aims at describing the current state of practice when it comes to data availability in SE studies. 
+
+
+\begin{quote}
+\textbf{RQ2:} To what extent is data available in research papers and in which form is the data made available?
+\end{quote}
+
+
+The connection between the two hypotheses and the focus of the two research questions are visualized in Figure~\ref{fig:intro-hypo}.
+
+
+\begin{figure}
+\centering
+\caption{The relationship between hypotheses and research questions. }
+\label{fig:intro-hypo}
+\input{figures/fighypo.tex}
+\end{figure}

@@ -1,0 +1,138 @@
+﻿\section{Discussion}
+\label{sec:discussion}
+In this section we will discuss and answer the previously defined hypothesis and research questions. This will be done by using the data collected during the pre-study, application of algorithms and replication of analysis. Furthermore, improvements to our review process will be discussed and finally guidelines will be presented.
+
+
+\subsection{Results from Pre-Study}
+\label{sec:discussion-resultsprestudy}
+From the pre-study we obtained data, presented in Table~\ref{tab:resultsprestudy-descstat}, showing the current status of outlier detection within ESE. Based on this data we can answer our research questions as follows.
+
+
+\textbf{RQ1}: 34\% of the surveyed papers mentions outliers, furthermore, 27\% of those mentioning outliers document some kind of outlier detection. Unfortunately, it is not possible to see any trends or draw any conclusions regarding how documentation is conducted as all of the papers documenting outlier detection do this in different ways. This is clearly troublesome and hinders reproducibility in the long term. Additionally, we did not observe any paper that conducted outlier detection without mentioning it.
+
+
+\textbf{RQ2}: 37\% of the papers collected had data available and 26\% offered their data in the paper or online. In total, 16\% of the papers in the sample offered data in the paper and 9\% online. The result presented here is far from surprising for an immature research field such as SE\@. There could be many reasons for the low outcome and we propose two reasons which we believe are more important: 
+
+
+First, there is a lack of consensus on how to treat and make raw data available within SE\@. This is, according to us, a major issue and something that the field of SE needs to address. In our guidelines, in Section~\ref{sec:discussion-guidelines}, we elaborate more on this.
+
+
+The second reason, proposed by us, for the low outcome is that replication is not kept in mind by researchers while conducting their research. This might have to do with replication not being common within SE as it is a fairly immature research field (compared to physics and medicine). Also, we have observed that the replication mentioned in SE research literature concerns full experiment replication and does rarely mention replication of the data analysis, so called re-analysis. However, we believe that re-analysis is of importance as well since it can be used to validate if conclusions based on, for example, significance tests are correct. As an example of this, one of the papers included in this study was found by us to have incorrect calculations in the analysis. This error was later confirmed and corrected by the author who stated that it fortunately had no impact on the conclusions in the paper. In addition, being able to conduct re-analysis would further encourage meta-analysis in SE research, since access to data and statistical analysis procedures would be readily available.
+
+
+During the course of the pre-study we encountered some issues, except those mentioned earlier, regarding data handling and analysis worth mentioning. We will present our proposal for solutions for the following issues in Section~\ref{sec:discussion-guidelines}:
+
+
+\begin{itemize}
+
+
+\item Some authors use data from repositories such as the PROMISE database. However, they do not clearly state how the data was extracted from the repository which makes replication tedious and in some cases impossible. For example, in one of the investigated papers, the data sets were divided into subsets and it was not described how the division was done. This hindered us from recreating the post processing of the data and we had to exclude the paper.  
+
+
+\item Even though we were given access to raw data, this data was at times `too' raw. Meaning that to get the data needed to reproduce their analysis we also needed to perform some kind of data extraction. This is both a difficult and time consuming procedure (thus prone to errors) which further complicates the replication of a study.
+
+
+\item The connection between the raw data and the paper was not obvious for some of the studies we reviewed. For example, one data set used column names which were a combination of abbreviations and words in the author native language (not english). This led to some confusion and we needed to contact the author several times in order to understand the published data.
+
+
+\item For some of the papers analyzed in Section~\ref{sec:results-papers} we had to contact the authors to have them explain their analysis and motivation behind the choices they made. For example, some papers mention that they use a ``Wilcoxon'' significance test without specifying if it is one or two-sided and\slash or a paired test. This created unnecessary uncertainty about the analysis conducted and made replication more difficult.
+
+
+\end{itemize}
+
+
+When taking into account all the above items it is clear that journals and conference should require authors to be more explicit in describing study execution and analysis.
+
+
+
+
+\subsection{Results from the Application of Algorithms}
+\label{sec:discussion-resultsapplication}
+After applying outlier detection with the parameters described in Section~\ref{sec:methodology} on the candidate papers from Section~\ref{sec:resultsprestudy} we found that 24 out of the 77 data sets contained outliers. As an additional test we removed the data points suggested as outliers by the detection algorithm and compared the modified data set with the original one. This comparison, using a significance test, showed that there was no significant difference between the two sets in any of the 24 cases. As we did find outliers using our outlier detection method we reject our null-hypothesis $\mathbf{H_{0_{\mathrm{Outliers}}}}$ in favour for our alternative hypothesis $\mathbf{H_{1_{\mathrm{Outliers}}}}$. As described in Section~\ref{sec:methodology}, we chose a robust method for detecting outliers since we wanted a method that fitted a wide range of data sets in order to implement an automatic process. However, this probably led to less outliers being found in comparison to if we would have chosen a suitable outlier detection method for each data set. This fact should be taken into account when interpreting our results and is mentioned in our threats to validity in Section~\ref{sec:threatstovalidity}.
+
+
+
+
+Two of the analyzed papers in Section~\ref{sec:results-papers}, \citep{itkonen2013test} and \citep{minku2013analysis}, did mention and document some kind of outlier detection. After conducting our own outlier detection on these papers we noticed that the number of detected outliers differed. However, this difference is probably due to the type of method used and the accuracy of it. \citet{itkonen2013test} uses a standard box plot which has a narrower span for the definition of an inlier than our MZS method. \citet{minku2013analysis} uses a $k$-means clustering-based method which is fundamentally different from MZS; but as MZS reported more outliers than theirs we assume that our MZS uses a more narrow span for defining an inlier than their clustering method.
+
+
+
+
+For the analysis of the effect on the conclusion after removing outliers, 6 papers had matched our criteria (outliers exist, analysis explained) and were candidates for being further analyzed. However, we had to disregard 4 papers due to their use of a pair-wise test in the analysis. The motivation behind this decision was that if we remove data points from one of the sets we will break pairs. However, a countermeasure would be to remove the whole pair and this method would work in some cases but not in this case. If we were to remove pairs we would also remove potential non-outliers from a data set. This would introduce uncertainty regarding the effect of the outlier detection and removal we have conducted. In Section~\ref{sec:threatstovalidity} we present this method as a possible threat to validity. The two remaining papers did not provide results from which we could reject our second hypothesis, $\mathbf{H_{0_{\mathrm{Concl}}}}$. Though, it should be noted that we did have a small sample size. We do, however, believe that further expanding the sample size would be a difficult task as our results show that it is difficult to obtain data from recently published studies as well as conducting a re-analysis.
+
+
+
+
+Even though the removal of outliers did not affect any conclusions, the algorithm used (MZS) did identify outliers in some cases. As the algorithm is easy to use it could still be of interest for researchers to use this method to quickly identify outliers. However, even though the algorithm proposes a data point to be an outlier, this alone is not enough to exclude it from a data set. Researchers are encouraged to use simple detection algorithms, such as MZS, and use the result from these to discuss the inclusion or exclusion of data points in their study.
+
+
+
+
+\subsection{Regarding the Review Process}
+\label{sec:discussion-method}
+During the pre-study two papers were deemed to fit our initial criteria but were later disregarded. The reason for this was that the data sets found in these papers did not have enough samples to conduct outlier detection. In hindsight, a criterion stating the minimum amount of samples needed for a paper to be a candidate would have been an improvement to our review process.
+
+
+Another improvement to our review process would be a criterion stating that all data used to draw conclusions has to be free of charge and that republishing of it is allowed. Since this criterion did not exist \citep{minku2013analysis} was excluded late in the process.
+
+
+
+
+\subsection{Multi-Dimensional Outlier Detection}
+During the set up of this study we planned for having outlier detection algorithms for both one-dimensional and multi-dimensional data. However, as the pre-study turned out we did not encounter any multi-dimensional data sets. As our sample was a `current' sample one could say that ESE today does not involve analysis of multi-dimensional data, according to our sample. However, we believe that the field will progress into handling larger data sets on which one would like to perform multi-dimensional analysis. As an example, one could assess how a developer is performing based on several attributes over several projects (open source contribeutors for example). The use of large data sets will also be facilitated through the access of big data storage and computing clusters. So, we propose that the field of SE starts discussing if\slash how multi-dimensional outlier detection should be conducted within the field in the future and how this should be documented. Our pre-study regarding algorithms can be used as a small and limited introduction to multi-dimensional algorithms and their issues. To conclude, there is still a lot of work to be done in regards to multi-dimensional outlier detection within SE\@.
+
+
+
+
+\subsection{Guidelines}
+\label{sec:discussion-guidelines}
+In the beginning of this study we sat out to propose guidelines for conducting outlier detection. However, as our study included replication, and this was easier said than done, we have come across more challenges. In this section we propose solutions for those challenges as well since they can be a contribution to the body of knowledge of SE\@.
+
+
+
+
+\paragraph{Guidelines for Outlier Detection}
+
+
+\begin{itemize}
+
+
+\item Outlier detection algorithms are only tools to help suggest what data points could be outliers based on the specification of the algorithms. Therefore, researchers should view these suggestions critically and not remove data points without reflecting over the suggestions.
+
+
+\item A motivation to why a data point is an outlier should always be provided no matter if detection algorithms with cutoff values or scoring is used.
+
+
+\item When conducting outlier detection, one should present which data points were regarded as outliers by the algorithm. This can be done with the help of a scatter plot for example. Also, motivate which potential outliers that were disregarded and excluded from the statistical analysis.
+
+
+\item Reflect and argue for the usefulness of outlier detection before conducting it. As in the case with pair-wise tests (discussed in Section~\ref{sec:discussion-resultsapplication}), it might not always make sense to remove deviating data points.Alltså vilka som faktiskt togs bort och inte 
+
+
+\item Always document. It is important that no tacit knowledge is needed to replicate the outlier detection and removal conducted.
+
+
+\end{itemize}
+
+
+
+
+\paragraph{Guidelines for Facilitating Replication}
+
+
+\begin{itemize}
+
+
+\item When using already available data, such as data from the PROMISE database, it is important to present how the information was extracted. This is proposed by us to be done by giving instructions or, preferably, providing extraction scripts. Furthermore, we propose that the data from the extraction and post-processing steps are made available to ease the verification of the replication.
+
+
+\item Use online data storage solutions such as the PROMISE database, Figshare, Dropbox or Github instead of hosting data on personal university pages that might be terminated when the authors leave.
+
+
+\item The information presented in the paper should clearly correspond to the information in the raw data set. Preferably, the authors should provide a key stating the mapping between the paper and the data set.
+
+
+\item The kind of significance test conducted should be clearly stated together with a motivation of why this test was chosen. If the test is conducted using a statistical software tool, mentioning which tool and providing all parameters used for the test is of importance. 
+
+
+\end{itemize}

@@ -1,0 +1,13 @@
+\tikzstyle{procstep} = [ellipse, draw, text centered, inner sep=0pt, minimum height=20pt, minimum width=\textwidth, node distance=50pt]
+\tikzstyle{procstep_application} = [ellipse, draw, text centered, inner sep=0pt, minimum height=20pt, minimum width=0.85\textwidth, node distance=50pt]
+\tikzstyle{procstep_repanalysis} = [ellipse, draw, text centered, inner sep=0pt, minimum height=20pt, minimum width=0.4\textwidth, node distance=50pt]
+
+\begin{tikzpicture}[auto, scale=1, every node/.style={scale=1},minimum height=20pt, minimum width=\textwidth,]
+  \node (sources) [rectangle, rounded corners, draw] {Papers from \emph{ICSE}, \emph{ESEJ}, \emph{PROMISE}};
+  \node (qualityass) [procstep, below of=sources] {Candidates for quality assessment};
+  \node (application) [procstep_application, below of=qualityass] {Candidates for application of algorithms};
+  \node (repanalysis) [procstep_repanalysis, below of=application] {Candidates for replication of analysis};
+  \draw [->] (sources) to node [xshift=-140] {\footnotesize{Initial filtering}} (qualityass);
+  \draw [->] (qualityass) to node [xshift=-80pt] {\footnotesize{Data available and post-process is reproducible}} (application);
+  \draw [->] (application) -- node [xshift=-94pt] {\footnotesize{Has outliers and analysis is reproducible}} (repanalysis);
+\end{tikzpicture}

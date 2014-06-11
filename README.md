@@ -117,8 +117,6 @@ The data sets used in this study can be found in the folder *data_sets*. The dat
 
 **lee2013drag** - Yun Young Lee, Nicholas Chen, and Ralph E Johnson. Drag-and-drop refactoring: intuitive and efficient program transformation. In *Proceedings of the 2013 International Conference on Software Engineering*, pages 23–32. IEEE Press, 2013.
 
-**minku2013analysis** - Leandro L Minku and Xin Yao. An analysis of multi-objective evolutionary algorithms for training ensemble models based on different performance measures in software effort estimation. In *Proceedings of the 9th International Conference on Predictive Models in Software Engineering*, page 8. ACM, 2013.
-
 **nam2013transfer** - Jaechang Nam, Sinno Jialin Pan, and Sunghun Kim. Transfer defect learning. In *Proceedings of the 2013 International Conference on Software Engineering*, pages 382–391. IEEE Press, 2013.
 
 **parnin2013adoption** - Chris Parnin, Christian Bird, and Emerson Murphy-Hill. Adoption and use of java generics. *Empirical Software Engineering*, 18(6):1047–1089, 2013.
@@ -127,6 +125,11 @@ The data sets used in this study can be found in the folder *data_sets*. The dat
 
 **shar2013mining** - Lwin Khin Shar, Hee Beng Kuan Tan, and Lionel C Briand. Mining sql injection and cross site scripting vulnerabilities using hybrid program analysis. In *Proceedings of the 2013 International Conference on Software Engineering*, pages 642–651. IEEE Press, 2013.
 
-**song2013impact** - Liyan Song, Leandro L Minku, and Xin Yao. The impact of parameter tuning on software effort estimation using learning machines. In *Proceedings of the 9th International Conference on Predictive Models in Software Engineering*, page 9. ACM, 2013.
-
 **wang2013improving** - Jinshui Wang, Xin Peng, Zhenchang Xing, and Wenyun Zhao. Improving feature location practice with multi-faceted interactive exploration. In *Proceedings of the 2013 International Conference on Software Engineering*, pages 762–771. IEEE Press, 2013.
+
+### Data sets not available
+Due to missing consent from the authors the data sets from the following papers are not available:
+
+**minku2013analysis** - Leandro L Minku and Xin Yao. An analysis of multi-objective evolutionary algorithms for training ensemble models based on different performance measures in software effort estimation. In *Proceedings of the 9th International Conference on Predictive Models in Software Engineering*, page 8. ACM, 2013.
+
+**song2013impact** - Liyan Song, Leandro L Minku, and Xin Yao. The impact of parameter tuning on software effort estimation using learning machines. In *Proceedings of the 9th International Conference on Predictive Models in Software Engineering*, page 9. ACM, 2013.

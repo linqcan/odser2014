@@ -64,37 +64,37 @@ Again, we like to remind you to name your data sets according to the convetion p
 ## Result files generated
 The pipeline produces numerous result files. Each file has the *study_identifier* and *set_identifier* in the file name before the result file suffix is added. Below is a short description of each.
 
-**-descStatistics.html** Descriptive statistics for the data set in HTML format.
+**descStatistics.html** Descriptive statistics for the data set in HTML format.
 
-**-descStatistics.tex** Descriptive statistics for the data set in LateX format.
+**descStatistics.tex** Descriptive statistics for the data set in LateX format.
 
-**-labelled.csv** Data set with outliers labelled after MZS has been applied.
+**labelled.csv** Data set with outliers labelled after MZS has been applied.
 
-**-normPlotsNoOutliers.pdf** Normality plot for data set without outliers.
+**normPlotsNoOutliers.pdf** Normality plot for data set without outliers.
 
-**-normPlotsOutliers.pdf** Normality plot for data set with outliers.
+**normPlotsOutliers.pdf** Normality plot for data set with outliers.
 
-**-original.csv** The original data set.
+**original.csv** The original data set.
 
-**-plotOutliers.pdf** Plot with outliers marked out.
+**plotOutliers.pdf** Plot with outliers marked out.
 
-**-plotOutliers.tex** LateX code for including the outlier plot in a LateX document.
+**plotOutliers.tex** LateX code for including the outlier plot in a LateX document.
 
-**-studentStat.html** Statistics from a Students t-test (Welch's t-test) comparing the data set before and after outliers were removed. HTML format.
+**studentStat.html** Statistics from a Students t-test (Welch's t-test) comparing the data set before and after outliers were removed. HTML format.
 
-**-studentStat.tex** Statistics from a Students t-test (Welch's t-test) comparing the data set before and after outliers were removed. LateX format.
+**studentStat.tex** Statistics from a Students t-test (Welch's t-test) comparing the data set before and after outliers were removed. LateX format.
 
-**-swStatNoOutlier.html** Shapiro-Wilks statistics for the data set after outliers were removed. HTML format.
+**swStatNoOutlier.html** Shapiro-Wilks statistics for the data set after outliers were removed. HTML format.
 
-**-swStatNoOutlier.tex** Shapiro-Wilks statistics for the data set after outliers were removed. LateX format.
+**swStatNoOutlier.tex** Shapiro-Wilks statistics for the data set after outliers were removed. LateX format.
 
-**-swStatOutlier.html** Shapiro-Wilks statistics for the data set before outliers were removed. HTML format.
+**swStatOutlier.html** Shapiro-Wilks statistics for the data set before outliers were removed. HTML format.
 
-**-swStatOutlier.tex** Shapiro-Wilks statistics for the data set after outliers were removed. LateX format.
+**swStatOutlier.tex** Shapiro-Wilks statistics for the data set after outliers were removed. LateX format.
 
-**-wilcoxonStat.html** Statistics from a Wilcoxon test (Mann-Whitney U) comparing the data set before and after outliers were removed. HTML format.
+**wilcoxonStat.html** Statistics from a Wilcoxon test (Mann-Whitney U) comparing the data set before and after outliers were removed. HTML format.
 
-**-wilcoxonStat.tex** Statistics from a Wilcoxon test (Mann-Whitney U) comparing the data set before and after outliers were removed. LateX format.
+**wilcoxonStat.tex** Statistics from a Wilcoxon test (Mann-Whitney U) comparing the data set before and after outliers were removed. LateX format.
 
 ## Reference for tests used in R
 

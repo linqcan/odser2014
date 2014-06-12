@@ -12,7 +12,14 @@ In this section descriptive statistics regarding the paper search will be presen
 
 \subsection{Descriptive Statistics for the Paper Search}
 \label{sec:resultsprestudy-descriptive}
-In Table~\ref{tab:resultsprestudy-descstat} descriptive statistics for the paper search is presented. From this table one can note that 39\% of the papers had data available after a request was sent to the authors. Furthermore, it is stated in the table that two replies were given as `other reasons', these reasons were that the data's size was too large for it to be handed over and that the data was not easily available to the author. Additionally, two papers were disregarded due to their unsuitability to outlier detection. This unsuitability is further elaborated in Section~\ref{sec:discussion-method}. The descriptive statistics will be used to answer \textbf{RQ1} and \textbf{RQ2}. A discussion regarding the data in Table~\ref{tab:resultsprestudy-descstat} is presented in Section~\ref{sec:discussion-resultsprestudy}.
+In Table~\ref{tab:resultsprestudy-descstat} descriptive statistics for the paper search is presented. From this table one can note that 39\% of the papers had data available after a request was sent to the authors. As additional information regarding data availability, the source with the highest rate of papers with data available was PROMISE (60\%) followed by ESEJ (35\%) and ICSE (33\%).  Furthermore, it is stated in the table that two replies were given as `other reasons', these reasons were that the data's size was too large for it to be handed over and that the data was not easily available to the author. Additionally, two papers were disregarded due to their unsuitability to outlier detection. This unsuitability is further elaborated in Section~\ref{sec:discussion-method}. 
+
+
+
+
+Regarding \textbf{RQ1}, PROMISE (80\%) had the largest percentage of papers documenting outliers and was followed by ESEJ (53\%) and ICSE(14\%). The descriptive statistics in Table~\ref{tab:resultsprestudy-descstat}  will be used to answer \textbf{RQ1} and \textbf{RQ2} in Section~\ref{sec:discussion-resultsprestudy}.
+
+
 
 
 \input{descstatpapertable.tex}
@@ -152,7 +159,7 @@ Local correlation integral method is an unsupervised and density based outlier d
 The LOCI algorithm is described as not being sensitive to the choice of parameters and the authors also suggests how to set the required parameters in \citep{papadimitriou2003loci}. In this study a value of 20 was used for the parameter $nmin$, number of neighbors, as proposed by the authors. However, this choice requires the data set to be evaluated to consist of at least 20 data points. To determine if a data point should be considered as an outlier, or an inlier, a cutoff value is required. In this study the cutoff value is set to $3\sigma$, again, as recommended by the authors. Furthermore, $\alpha$, the scaling factor for the neighborhood, is set to 0.5 in this study, also as recommended by the authors. Finally, the parameter $r_{max}$ can be calculated by using the definition in original paper. Therefore, LOCI does not fulfill the criterion regarding being parameterless. However, the authors propose default values for the required parameters that would make the algorithm robust. For that reason LOCI was chosen despite it not being truly parameterless. 
 
 
-By setting the required parameters to the proposed values, and calculating one according to the original paper, LOCI can be considered parameterless and robust. This, combined with LOCI being unsupervised, the algorithm does fulfill the selection criteria.
+By setting the required parameters to the proposed values, and calculating one according to the original paper, LOCI can be considered parameterless and robust. This, combined with LOCI being unsupervised, makes the algorithm fulfill the selection criteria.
 
 
 
@@ -171,20 +178,16 @@ ABOD fulfills the criteria by being unsupervised, not making any assumptions abo
 
 
 \subsubsection{Changes to the Automated Process}
-As a result of the found algorithms the planned automated process was changed and those changes are defined further in this section.
+As a result of the found algorithms the planned automated process was changed and those changes are defined further in this section and visualized in Appendix~\ref{sec:appendix-pipeline}.
+
+
 Modified Z Score was implemented in \textsf{R}\footnote{\url{http://www.r-project.org/}} and is available in this study's repository\footnote{\url{https://github.com/linqcan/odser2014}}. The LOCI and ABOD algorithms used were supplied by the ELKI Data Mining Framework\footnote{\url{http://elki.dbs.ifi.lmu.de}}\citep{elki2013} and this software was also used to run the algorithms. \textsf{Python} was used to connect the different tools with each other as well as for data parsing.
 
 
 For a one-dimensional data set the MZS algorithm is run in \textsf{R}. The result is stored in a comma separated value (CSV) file. This CSV file contains the original data set and a boolean flag for each point stating if it is an outlier or not. 
 
 
-A data set which contains more than one dimension is evaluated with both LOCI and ABOD using ELKI\@. Before LOCI is run the parameter $r_{max}$, required by ELKI, is calculated and passed on to ELKI\@. The results from the outlier detection in ELKI are written to a CSV file. This file is then parsed in \textsf{Python} to remove strings inserted by ELKI\@. For LOCI this result file contains the original data points and the $MDEF_{\sigma}$ value for each point. Similarly, the ABOD contains the original data points and the ABOD outlier score. The CSV file for LOCI is then fed to a \textsf{R} script that takes the original data set and labels data points as outliers with a boolean flag if their respective $MDEF_{\sigma}$ value is above a specified cutoff value, $3\sigma$. The result of this labelling is then stored in a CSV file. No further processing is to be done on the ABOD results.
-
-
-The CSV files with the results from the outlier detection algorithms is then used in the analysis phase.
-
-
-The automated process is visualized in Appendix~\ref{sec:appendix-pipeline}.
+A data set which contains more than one dimension is evaluated with both LOCI and ABOD using ELKI\@. Before LOCI is run the parameter $r_{max}$, required by ELKI, is calculated and passed on to ELKI\@. The results from the outlier detection in ELKI are written to a CSV file. This file is then parsed in \textsf{Python} to remove strings inserted by ELKI\@. For LOCI this result file contains the original data points and the $MDEF_{\sigma}$ value for each point. Similarly, the ABOD contains the original data points and the ABOD outlier score. The CSV file for LOCI is then fed to a \textsf{R} script that takes the original data set and labels data points as outliers with a boolean flag if their respective $MDEF_{\sigma}$ value is above a specified cutoff value, $3\sigma$. The result of this labelling is then stored in a CSV file. No further processing is to be done on the ABOD results. The CSV files with the results from the outlier detection algorithms is then used in the analysis phase.
 
 
 \subsubsection{Changes to the Analysis}

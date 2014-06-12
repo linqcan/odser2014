@@ -128,7 +128,7 @@ The data sets used in this study can be found in the folder *data_sets*. The dat
 **wang2013improving** - Jinshui Wang, Xin Peng, Zhenchang Xing, and Wenyun Zhao. Improving feature location practice with multi-faceted interactive exploration. In *Proceedings of the 2013 International Conference on Software Engineering*, pages 762–771. IEEE Press, 2013.
 
 ### Data sets not available
-Due to missing consent from the authors the data sets from the following papers are not available:
+Due to missing consent from the authors the data sets listed below are not available. Therefore, the report compiled from this repo is missing plots related to these data sets that the published report has.
 
 **minku2013analysis** - Leandro L Minku and Xin Yao. An analysis of multi-objective evolutionary algorithms for training ensemble models based on different performance measures in software effort estimation. In *Proceedings of the 9th International Conference on Predictive Models in Software Engineering*, page 8. ACM, 2013.
 

@@ -1,7 +1,9 @@
 # Unsupervised Outlier Detection in Software Engineering
-This is a companion repository to the master thesis "Unsupervised Outlier Detection in Software Engineering" by Henrik Larsson and Erik Lindqvist.
+This is a companion repository to the master thesis "Unsupervised Outlier Detection in Software Engineering" by Henrik Larsson and Erik Lindqvist. The thesis was supervised by [Richard Torkar](http://torkar.se/).
 
-After cloning this repository it is possible to re-run the analysis and compile the report.
+The published theis can be found [here](report/publishedThesis.pdf).
+
+After cloning this repository it is possible to re-run the analysis and re-compile the report.
 
 ## Requirements
 The following software requirements must be fulfilled in order to run the analysis and compile the report.
@@ -103,7 +105,9 @@ The pipeline produces numerous result files. Each file has the *study_identifier
 * `shapiro.test` for normality testing
 
 ## Data sets used
-The data sets used in this study can be found in the folder *data_sets*. The data sets are credited as follows:
+The data sets used in this study can be found in the folder *data_sets*. The data has been extracted from the original sources to CSV files.
+
+The data sets are credited as follows:
 
 **arcuri2013parameter** - Andrea Arcuri and Gordon Fraser. Parameter tuning or default values? an empirical investigation in search-based software engineering. *Empirical Software Engineering, 18(3):594–623, 2013.*
 
